@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<head>
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/viewstyle.css}">
+<meta charset="ISO-8859-1">
+<title>View Page</title>
+</head>
+<body>
+	<div sec:authorize="isAnonymous()">
+		<h1>Please Login to view your ticket</h1>
+		<a th:href="@{/Login}">Click Here to login</a>
+	</div>
+	<div sec:authorize="isAuthenticated()">
+
+		<h1>This is View Page</h1>
+		<div class=buttonBar>
+			<a href="/add"><button class="button-29" role="button">AddTickets</button></a> 
+			<a href="/"><button class="button-29" role="button">Home Page</button></a>
+			<a th:href="@{/Login}" sec:authorize="isAnonymous()"><button class="button-29" >Login</button></a>
+	<a th:href="@{/logout}" sec:authorize="isAuthenticated()"><button class="button-29" >Logout</button></a>
+		</div>
+		<br> <br>
+		<div class="container">
+			<table border="1">
+				<tr>
+					<th>Id No</th>
+					<th>Show Name</th>
+					<th>User Name</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Age</th>
+					<th>Price</th>
+					<th>Quantity</th>
+				</tr>
+				<tr th:each="m : ${ticket}">
+					<td th:text="${m.id}"></td>
+					<td th:text="${m.showName}"></td>
+					<td th:text="${m.userName}"></td>
+					<td th:text="${m.firstName}"></td>
+					<td th:text="${m.lastName}"></td>
+					<td th:text="${m.email}"></td>
+					<td th:text="${m.age}"></td>
+					<td th:text="${m.price}"></td>
+					<td th:text="${m.quantity}"></td>
+					<td sec:authorize="hasRole('VENDER')"><a
+						th:href="@{/edit/{id}(id=${m.id})}">EDIT</a></td>
+					<td sec:authorize="hasRole('VENDER')"><a
+						th:href="@{/delete/{id}(id=${m.id})}">DELETE</a></td>
+				</tr>
+			</table>
+			<div sec:authorize="hasRole('GUEST')" id="GUESTTOTAL">
+				Sub Total:= <label th:text="${subTotal}"></label> <br> Tax:=<label
+					th:text="${tax}"></label><br> Total:=<label th:text="${total}"></label><br>
+			</div>
+		</div>
+		<br> <br>
+	</div>
+</body>
+</html>

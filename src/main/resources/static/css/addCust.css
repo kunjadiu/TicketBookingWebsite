@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+input[type=text],input[type=email],input[type=tel],input[type=tel],select,input[type=number] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+input[type=submit]
+{
+	background-color: #04AA6D;
+ 	border: none;
+ 	color: white;
+  	padding: 16px 32px;
+  	text-decoration: none;
+  	margin: 4px 2px;
+  	cursor: pointer;
+  	font-size:20px
+}
+input[type=text]:focus {
+  background-color: lightblue;
+}
+input[type=email]:focus {
+  background-color: lightblue;
+}
+input[type=tel]:focus {
+  background-color: lightblue;
+}

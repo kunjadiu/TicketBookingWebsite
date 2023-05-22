@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link rel="stylesheet" 
+		type="text/css" 
+		media="all" 
+		th:href="@{/css/root.css}">
+<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+<body>
+	<div class="Login">
+	<h1>Welcome to Online Ticket Booking System</h1>   
+	</div>
+	<div class="conatiner">
+		 <div class="content">
+		 	<b>Navratri Festival</b><br><br>
+		 	
+		 	<img src="../images/nav.jpeg" alt="AP Dilon Concert" width="230px" height="180px;"><br>
+		 	<p><strong>Artist: </strong>Kirtidan Gadhvi</p>
+		 	<p><strong>Location: </strong>Enercare Centre, Toronto</p>
+			 <strong>22 November, 2022</strong> <span class="date">
+					 <br> "Tuesday" 
+			</span>
+		</div>
+	 	<div class="content">
+		 	<b>"Toronto International Snowmobile, ATV & Powersports Show"</b><br><br>
+		 	
+		 	<img src="../images/snow.jpeg" alt="AP Dilon Concert" width="230px" height="180px;"><br>
+		 	<p><strong>Location: </strong>International Centre,Airport Road</p>
+			 <strong>25 December, 2022</strong> <span class="date">
+					 <br> "Sunday" 
+			</span>
+		</div>
+	</div>
+	<div class=buttonBar>
+	<a th:href="@{/Login}" sec:authorize="isAnonymous()"><button class="button-29" >Login</button></a>
+	<a th:href="@{/register}" sec:authorize="isAnonymous()"><button class="button-29" >Register</button></a>
+	<a th:href="@{/logout}" sec:authorize="isAuthenticated()"><button class="button-29" >Logout</button></a>
+	<a href="/add" sec:authorize="hasRole('VENDER')"><button class="button-29" role="button">Book Tickets</button></a>
+	<a href="/view" sec:authorize="isAuthenticated()"><button class="button-29" role="button">View Tickets</button></a>      
+	</div>
+</body>
+</html>

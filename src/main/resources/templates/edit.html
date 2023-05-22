@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link rel="stylesheet" 
+		type="text/css" 
+		media="all" 
+		th:href="@{/css/addstyle.css}">
+<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1">
+<title>Edit Tickets</title>
+</head>
+<body>
+<h1>Please Edit Your Information</h1>
+<div class="container">
+	<form th:action ="@{/editTicket}" method="post" th:object="${ticket}">
+		<input type="hidden" th:field="*{id}">
+		Show name:-<select th:field="*{showName}">
+			<option th:each="c: *{shows}" 
+			th:text="${c}" th:value="${c}"></option>
+		</select><br>
+		User Name:- <select th:field="*{userName}">
+				<option th:each="user: ${users}" th:text="${user.userName}" th:value="${user.userName}"></option>
+			</select><br>
+		First Name:-<input type="text" th:field="*{firstName}"><br>
+		Last Name:-<input type="text" th:field="*{lastName}"><br>
+		E-mail:-<input type="email" th:field="*{email}"><br>
+		Age :-<input type="number" th:field="*{age}"><br>
+		Price :- <input type="number" th:field="*{price}" required><br>
+		Quantity :- <input type="number" th:field="*{quantity}" required><br>
+		<input type="submit" value="Edit Information"><br>
+	</form>
+	
+</div>
+<div class=buttonBar>
+		<a th:href="@{/Login}" sec:authorize="isAnonymous()"><button class="button-29" >Login</button></a>
+		<a th:href="@{/logout}" sec:authorize="isAuthenticated()"><button class="button-29" >Logout</button></a>
+		<a href="/view" ><button class="button-29" role="button">View Tickets</button></a>      
+		<a href="/"><button class="button-29" role="button">Home Page</button></a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+@charset "ISO-8859-1";
+body{
+	background-image: url(/images/background1.jpeg);
+    background-position: fit;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 22px;
+}
+.container{
+	display: flex;
+    flex-direction: row-reverse;
+    align-content: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+}
+input[type=text],input[type=email],input[type=tel],input[type=tel],select,input[type=number] {
+      width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+    font-size: 15px;
+    font-style: italic;
+}
+input[type=submit]
+{
+	background-color: #04AA6D;
+ 	border: none;
+ 	color: white;
+  	padding: 16px 32px;
+  	text-decoration: none;
+  	margin: 4px 2px;
+  	cursor: pointer;
+  	font-size:20px
+}
+input[type=text]:focus {
+  background-color: lightblue;
+}
+input[type=email]:focus {
+  background-color: lightblue;
+}
+input[type=tel]:focus {
+  background-color: lightblue;
+}
+h1
+{
+	text-align: center;
+	color :#70CFEE;
+}
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  position: absolute;
+  bottom: 5px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.buttonR
+{
+	background-color: #04AA6D;
+ 	border: none;
+ 	color: white;
+  	padding: 16px 32px;
+  	text-decoration: none;
+  	margin: 4px 2px;
+  	cursor: pointer;
+  	font-size:20px
+}
+.buttonBar{
+	display: flex;
+    justify-content: space-evenly;
+}

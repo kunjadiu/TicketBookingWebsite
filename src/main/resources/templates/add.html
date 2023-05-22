@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link rel="stylesheet" 
+		type="text/css" 
+		media="all" 
+		th:href="@{/css/addstyle.css}">
+<meta charset="ISO-8859-1">
+<title>Add Tickets</title>
+</head>
+<body>
+<h1>Please Add Your Tickets</h1>
+	<div class="container">
+		<form th:action ="@{/processAdd}" method="post" th:object="${ticket}">
+			Show name:-<select th:field="*{showName}">
+				<option th:each="c: *{shows}" 
+				th:text="${c}" th:value="${c}"></option>
+			</select><br>
+			User Name:- <select th:field="*{userName}">
+				<option th:each="user: ${users}" th:text="${user.userName}" th:value="${user.userName}"></option>
+			</select><br>
+			First Name:- <input type="text" th:field="*{firstName}" required ><br>
+			Last Name:- <input type="text" th:field="*{lastName}"required><br>
+			E-mail:- <input type="email" th:field="*{email}"><br>
+			Age :- <input type="number" th:field="*{age}" required><br>
+			Price :- <input type="number" th:field="*{price}" step=0.1 required min=10><br>
+			Quantity :- <input type="number" th:field="*{quantity}" required><br>
+			<input type="submit" value="Add Ticket"><br>
+		</form>
+	</div>
+	<div class=buttonBar >
+		<a href="/view" sec:authorize="hasRole('VENDER')" class=buttonR>View Tickets</a>
+		<a href="/" class=buttonR>Home Page</a>
+	</div>
+</body>
+</html>
